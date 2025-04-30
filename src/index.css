@@ -1,8 +1,11 @@
 @import "tailwindcss";
 @theme{
-    --bg-color: #000;
---text-color: hsla(194, 59%, 74%, 1);
+    --bg-color: rgba(0, 0, 0, 0.950);
+--text-color: rgb(199, 199, 199);
 --button-gren: hsla(88, 92%, 81%, 1);
 --b: hsla(270, 20%, 98%, 1);
 --button-text: hsla(195, 50%, 22%, 1);
+}
+.check{
+    color: rgb(199, 199, 199);
 }
