@@ -2,9 +2,9 @@ import React from "react";
 export const Navbar = () => {
   return (
     <>
-    <div className="h-[80px] w-full bg-[var(--bg-color)] shadow-md content-center fixed top-0 z-10"> 
+    <div className="h-[80px] w-[100vw] bg-[var(--bg-color)] shadow-md content-center fixed top-0 z-10"> 
 
-    <div className="">
+
 
       <div className="w-full flex justify-between items-center h-full pr-5 max-w-[1400px] mx-auto">
         <img
@@ -13,7 +13,7 @@ export const Navbar = () => {
           alt="Logo"
         />
 
-        <input type="text" className="hidden md:inline h-10 w-[40%] border border-gray-300 rounded-3xl pl-5 text-[var(--text-color)]" placeholder="Search..." />
+        <input type="text" className="hidden md:inline h-10 w-[40%] border border-gray-400 rounded-3xl pl-5 text-[var(--text-color)]" placeholder="Search..." />
 
         <div className="flex items-center">
           {" "}
@@ -32,7 +32,6 @@ export const Navbar = () => {
         </div>{" "}
         {/* Closing the added div */}
       </div>
-    </div>
     </div>
     </>
   );
