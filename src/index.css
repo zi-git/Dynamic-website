@@ -1,11 +1,109 @@
 @import "tailwindcss";
-@theme{
-    --bg-color: rgba(0, 0, 0, 0.950);
---text-color: rgb(199, 199, 199);
---button-gren: hsla(88, 92%, 81%, 1);
---b: hsla(270, 20%, 98%, 1);
---button-text: hsla(195, 50%, 22%, 1);
+@theme {
+  --bg-color: rgba(0, 0, 0, 0.95);
+  --text-color: rgb(199, 199, 199);
+  --button-gren: hsla(88, 92%, 81%, 1);
+  --b: hsla(270, 20%, 98%, 1);
+  --button-text: hsla(195, 50%, 22%, 1);
+
+  /* {animations} */
+  --showly-visible: showly-visible 3s linear 1;
+  --dimming_effect: dimming_effect 1s 3s linear 1;
 }
-.check{
-    color: rgb(199, 199, 199);
+
+@keyframes showly-visible {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes dimming_effect {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .text_scale_effect {
+    animation: text_scale_effect linear both;
+    animation-timeline: view(80% 0%);
+  }
+  .left_to_right {
+    animation: left_to_right ease-in-out both;
+    animation-timeline: view(85% 0%);
+  }
+  .right_to_left_image {
+    animation: right_to_left_image linear both;
+    animation-timeline: view(70% 0%);
+  }
+  .bottom_to_top {
+    animation: bottom_to_top ease-in-out both;
+    animation-timeline: view(85% 0%);
+  }
+  .font-family_change {
+    animation: font-family_change ease-in-out both;
+    animation-timeline: view(50% 0%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @keyframes text_scale_effect {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes left_to_right {
+    0% {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+        opacity: 1;
+    }
+  }
+
+  @keyframes right_to_left_image {
+    0% {
+      transform: rotateX(0);
+    }
+    100% {
+      transform: rotateX(30);
+    }
+  }
+
+  @keyframes bottom_to_top {
+    0% {
+      opacity: 0;
+      
+      transform: translateY(50%);
+      
+    }
+    100% {
+        opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
 }
