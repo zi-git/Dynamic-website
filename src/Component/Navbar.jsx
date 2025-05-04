@@ -42,7 +42,7 @@ export const Navbar = () => {
           <input
             type="text"
             className="hidden md:inline h-10 w-[40%] border border-gray-400 rounded-3xl pl-5 text-[var(--text-color)]"
-            placeholder="Search..."
+            placeholder="Search isn't functionable for now.."
           />
           <div className="flex items-center">
             {" "}

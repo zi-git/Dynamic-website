@@ -535,7 +535,7 @@ html{
 @media screen and (min-width: 600px) {
   .text_scale_effect {
     animation: text_scale_effect linear both;
-    animation-timeline: view(70% 0%);
+    animation-timeline: view(80% 0%);
   }
   .text_up_to_down {
     animation: text_up_to_down ease-in-out both;

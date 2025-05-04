@@ -28,6 +28,7 @@ export default function Hero() {
 
           <a
             className="text_scale_fade h-11 w-auto text-gray-200 flex gap-2 font-bold items-center border p-4 rounded-lg"
+            target="blank"
             href="https://github.com/zi-git/Dynamic-website.git"
           >
             <img
