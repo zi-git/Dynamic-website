@@ -2,6 +2,9 @@
 body {
   scroll-behavior: smooth;
 }
+html{
+  scroll-behavior: smooth;
+}
 @theme {
   --bg-color: rgba(0, 0, 0, 0.95);
   --text-color: rgb(199, 199, 199);
@@ -10,11 +13,11 @@ body {
   --button-text: hsla(195, 50%, 22%, 1);
 
   /* {animations} */
-  --showly-visible: showly-visible 3s linear 1;
+  --slowly-visible: slowly-visible 3s linear 1;
   --dimming_effect: dimming_effect 1s 3s linear 1;
 }
 
-@keyframes showly-visible {
+@keyframes slowly-visible {
   0% {
     opacity: 0;
     transform: translateX(-20px);
@@ -40,6 +43,27 @@ body {
     opacity: 1;
   }
 }
+.text_scale_fade {
+  animation: text_scale_fade linear both;
+  animation-timeline: view(0% 5%);
+}
+@keyframes text_scale_fade {
+  0% {
+    transform: scale(1);
+    backdrop-filter: blur(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    backdrop-filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    backdrop-filter: blur(10);
+    opacity: 1;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .text_scale_effect {
@@ -52,15 +76,15 @@ body {
   }
   .left_to_right {
     animation: left_to_right ease-in-out both;
-    animation-timeline: view(80% 0%);
+    animation-timeline: view(70% 0%);
   }
   .right_to_left_image {
     animation: right_to_left_image linear both;
-    animation-timeline: view(60% 0%);
+    animation-timeline: view(80% 0%);
   }
   .bottom_to_top {
     animation: bottom_to_top linear both;
-    animation-timeline: view(70% 0%);
+    animation-timeline: view(75% 0%);
   }
   .font-family_change {
     animation: font-family_change ease-in-out both;
@@ -68,7 +92,7 @@ body {
   }
   .text_color_change {
     animation: text_color_change_with_background_image linear both;
-    animation-timeline: view(20% 0%);
+    animation-timeline: view(20% 10%);
   }
   .up_to_down {
     animation: up_to_down ease-in-out both;
@@ -88,7 +112,11 @@ body {
   }
   .end_animation {
     animation: end_animation linear both;
-    animation-timeline: view(0% 90%);
+    animation-timeline: view(0% 95%);
+  }
+  .left_to_right_img {
+    animation: left_to_right_img ease-in-out both;
+    animation-timeline: view(50% 0%);
   }
 }
 
@@ -126,11 +154,22 @@ body {
 
   @keyframes right_to_left_image {
     0% {
-      transform: translateX(100%);
+      transform: translateX(500px);
       opacity: 0;
     }
     100% {
-      transform: translateX(0), rotateX(30deg), rotateZ(25deg);
+      transform: translateX(0) rotateX(30deg) rotateZ(25deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes left_to_right_img {
+    0% {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%) rotate(30);
       opacity: 1;
     }
   }
@@ -223,6 +262,7 @@ body {
   @keyframes up_to_down {
     0% {
       transform: translateY(-200px);
+      color: transparent;
       opacity: 0;
     }
     100% {
@@ -239,6 +279,212 @@ body {
     100% {
       transform: translateY(0);
       opacity: 1;
+    }
+  }
+
+  @keyframes right_to_left {
+    0% {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate_animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes stretch_animation {
+    0% {
+
+      opacity: 1;
+      margin-top: 50px;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes end_animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+}
+
+/* >600px */
+@media screen and (min-width: 600px) {
+  @keyframes text_scale_effect {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes text_up_to_down {
+    from {
+      transform: translate(0%, -7rem);
+
+      z-index: 1;
+    }
+    to {
+      transform: translate(0);
+      z-index: 1;
+    }
+  }
+
+  @keyframes left_to_right {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes right_to_left_image {
+    0% {
+      transform: translateX(200%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0), rotateX(30deg), rotateZ(25deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bottom_to_top {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes font-family_change {
+    0% {
+      font-family: "Arial", sans-serif;
+    }
+    10% {
+      font-family: "Helvetica", sans-serif;
+    }
+    20% {
+      font-family: "Tahoma", sans-serif;
+    }
+    30% {
+      font-family: "Verdana", sans-serif;
+    }
+    40% {
+      font-family: "Courier", monospace;
+    }
+    50% {
+      font-family: "Times New Roman", serif;
+    }
+    60% {
+      font-family: "Comic Sans MS", cursive;
+    }
+    70% {
+      font-family: "Georgia", serif;
+    }
+    80% {
+      font-family: "Impact", sans-serif;
+    }
+    90% {
+      font-family: "Lucida Console", monospace;
+    }
+    100% {
+      font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+    }
+  }
+
+  @keyframes text_color_change_with_background_image {
+    0% {
+      background-image: linear-gradient(to right, white, gray, rgb(27, 27, 27));
+      color: transparent;
+      background-clip: text;
+    }
+    25% {
+      color: transparent;
+      background-image: linear-gradient(to right, #f4e11eff, white, gray);
+      background-clip: text;
+    }
+    50% {
+      color: transparent;
+      background-image: linear-gradient(to right, #f4e11eff, #f4e11eff, white);
+      background-clip: text;
+    }
+    75% {
+      color: transparent;
+      background-image: linear-gradient(
+        to right,
+        #f4e11eff,
+        #f4e11eff,
+        #f4e11eff
+      );
+      background-clip: text;
+    }
+    100% {
+      color: transparent;
+      background-image: linear-gradient(
+        to right,
+        #f4e11eff,
+        #f4e11eff,
+        #f4e11eff
+      );
+      background-clip: text;
+    }
+  }
+
+  @keyframes left_to_right_img {
+    0% {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes down_to_up {
+    0% {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes up_to_down {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(00%);
     }
   }
 
@@ -283,5 +529,60 @@ body {
     100% {
       transform: scale(0);
     }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .text_scale_effect {
+    animation: text_scale_effect linear both;
+    animation-timeline: view(70% 0%);
+  }
+  .text_up_to_down {
+    animation: text_up_to_down ease-in-out both;
+    animation-timeline: view(70% 5%);
+  }
+  .left_to_right {
+    animation: left_to_right ease-in-out both;
+    animation-timeline: view(70% 0%);
+  }
+  .right_to_left_image {
+    animation: right_to_left_image linear both;
+    animation-timeline: view(70% 0%);
+  }
+  .down_to_up {
+    animation: down_to_up linear both;
+    animation-timeline: view(65% 0%);
+  }
+  .font-family_change {
+    animation: font-family_change ease-in-out both;
+    animation-timeline: view(20% 0%);
+  }
+  .text_color_change {
+    animation: text_color_change_with_background_image linear both;
+    animation-timeline: view(0% 50%);
+  }
+  .left_to_right_img {
+    animation: left_to_right_img ease-in-out both;
+    animation-timeline: view(50% 0%);
+  }
+  .right_to_left {
+    animation: right_to_left ease-in-out both;
+    animation-timeline: view(50% 0%);
+  }
+  .rotate_animation {
+    animation: rotate_animation linear both;
+    animation-timeline: view(0% 0%);
+  }
+  .stretch_animation {
+    animation: stretch_animation linear both;
+    animation-timeline: view(70% 0%);
+  }
+  .end_animation {
+    animation: end_animation linear both;
+    animation-timeline: view(0% 90%);
+  }
+  .up_to_down {
+    animation: up_to_down linear both;
+    animation-timeline: view(80% 0%);
   }
 }

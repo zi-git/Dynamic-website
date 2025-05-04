@@ -6,19 +6,13 @@ import Footer from "./Component/Footer";
 
 function App() {
 
-  const [loading, setLoading] = useState(true);
-  setTimeout(() => {
-    setLoading(false);
-  }, 3000);
+ 
   return (
     <div className="root">
-      {loading ? <Loader/> : (
-        <>
-          <Navbar />
+     
+      <Navbar />
           <Hero />
           <Footer />
-        </>
-      )}
     </div>
   )
 }
